@@ -57,7 +57,7 @@ if uploaded_file is not None:
         ax.set_ylabel('颈部角度(°)', fontproperties=simhei_font)
         ax.set_zlabel('肩部旋转角度(°)', fontproperties=simhei_font)
         plt.title('肩颈角度3D可视化散点图', fontproperties=simhei_font)
-        fig.colorbar(scatter, ax=ax, label='肩部外展/内收角度(°)', fontproperties=simhei_font)
+        fig.colorbar(scatter, ax=ax, label='肩部外展/内收角度(°)')
         st.pyplot(fig)
         
         # 3D 散点图分析结论
