@@ -52,7 +52,7 @@ if uploaded_file is not None:
         st.write("### 2.1  肩颈角度3D可视化散点图")
         fig = plt.figure(figsize=(10, 7))
         ax = fig.add_subplot(111, projection='3d')
-        scatter = ax.scatter(data['时间(s)'], data['颈部角度(°)'], data['肩部旋转角度(°)'], c=data['肩部外展/内收角度(°)'], cmap='viridis', fontproperties=simhei_font)
+        scatter = ax.scatter(data['时间(s)'], data['颈部角度(°)'], data['肩部旋转角度(°)'], c=data['肩部外展/内收角度(°)'], cmap='viridis')
         ax.set_xlabel('时间(s)', fontproperties=simhei_font)
         ax.set_ylabel('颈部角度(°)', fontproperties=simhei_font)
         ax.set_zlabel('肩部旋转角度(°)', fontproperties=simhei_font)
