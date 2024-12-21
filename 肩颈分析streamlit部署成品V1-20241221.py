@@ -18,7 +18,9 @@ from matplotlib import font_manager
 import os
 
 # 设置中文字体
-plt.rcParams['font.family'] = 'Microsoft YaHei'  # 微软雅黑
+font_path = 'simhei.ttf'  # 字体文件路径
+simhei_font = font_manager.FontProperties(fname=font_path)
+plt.rcParams['font.family'] = simhei_font.get_name()  # 使用 SimHei 字体
 plt.rcParams['axes.unicode_minus'] = False  # 修复负号显示问题
 
 # Streamlit 标题
