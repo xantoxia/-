@@ -6,6 +6,7 @@
 
 import numpy as np
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
@@ -16,9 +17,10 @@ from joblib import dump, load
 from matplotlib import font_manager
 import os
 
-# 设置中文字体
-plt.rcParams['font.family'] = 'sans-serif'
-plt.rcParams['axes.unicode_minus'] = False
+# 设置字体路径
+font_path = os.path.join(os.path.dirname(__file__), "simhei.ttf")
+matplotlib.rcParams['font.family'] = font_path
+matplotlib.rcParams['axes.unicode_minus'] = False
 
 # Streamlit 标题
 st.title("肩颈角度动态分析与异常检测")
