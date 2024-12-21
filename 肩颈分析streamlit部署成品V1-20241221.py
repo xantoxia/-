@@ -13,7 +13,13 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, roc_curve, auc
 from joblib import dump, load
+from matplotlib import font_manager
 import os
+
+# 下载并设置 SimHei 字体
+simhei_font = font_manager.FontProperties(fname="simhei.ttf", size=12)
+plt.rcParams['font.family'] = simhei_font.get_name()
+plt.rcParams['axes.unicode_minus'] = False
 
 # 设置中文字体
 plt.rcParams['font.family'] = 'SimHei'
