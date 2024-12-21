@@ -53,10 +53,10 @@ if uploaded_file is not None:
         fig = plt.figure(figsize=(10, 7))
         ax = fig.add_subplot(111, projection='3d')
         scatter = ax.scatter(data['时间(s)'], data['颈部角度(°)'], data['肩部旋转角度(°)'], c=data['肩部外展/内收角度(°)'], cmap='viridis')
-        ax.set_xlabel('时间(s)')
-        ax.set_ylabel('颈部角度(°)')
-        ax.set_zlabel('肩部旋转角度(°)')
-        plt.title('肩颈角度3D可视化散点图')
+        ax.set_xlabel('时间(s)', fontproperties=simhei_font)
+        ax.set_ylabel('颈部角度(°)', fontproperties=simhei_font)
+        ax.set_zlabel('肩部旋转角度(°)', fontproperties=simhei_font)
+        plt.title('肩颈角度3D可视化散点图', fontproperties=simhei_font)
         fig.colorbar(scatter, ax=ax, label='肩部外展/内收角度(°)')
         st.pyplot(fig)
         
@@ -82,7 +82,7 @@ if uploaded_file is not None:
         corr = data[['颈部角度(°)', '肩部上举角度(°)', '肩部外展/内收角度(°)', '肩部旋转角度(°)']].corr()
         plt.figure(figsize=(8, 6))
         sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f', cbar=True)
-        plt.title('肩颈角度相关性热力图')
+        plt.title('肩颈角度相关性热力图', fontproperties=simhei_font)
         st.pyplot(plt)
         
         # 相关性热力图分析结论
@@ -105,10 +105,10 @@ if uploaded_file is not None:
         fig, ax = plt.subplots(figsize=(10, 6))
         ax.scatter(data['时间(s)'], data['颈部角度(°)'], label='颈部角度(°)', alpha=0.7)
         ax.scatter(data['时间(s)'], data['肩部旋转角度(°)'], label='肩部旋转角度(°)', alpha=0.7)
-        ax.set_xlabel('时间(s)')
-        ax.set_ylabel('角度(°)')
+        ax.set_xlabel('时间(s)'), fontproperties=simhei_font
+        ax.set_ylabel('角度(°)', fontproperties=simhei_font)
         ax.legend()
-        ax.set_title('肩颈角度时间变化散点图')
+        ax.set_title('肩颈角度时间变化散点图', fontproperties=simhei_font)
     
         # 用 st.pyplot() 嵌入图像
         st.pyplot(fig)
@@ -216,9 +216,9 @@ if uploaded_file is not None:
     fig, ax = plt.subplots(figsize=(8, 6))
     ax.plot(fpr, tpr, label=f'AUC = {roc_auc:.2f}')
     ax.plot([0, 1], [0, 1], 'r--')
-    ax.set_xlabel('假阳性率')
-    ax.set_ylabel('真阳性率')
-    ax.set_title('ROC曲线')
+    ax.set_xlabel('假阳性率', fontproperties=simhei_font)
+    ax.set_ylabel('真阳性率', fontproperties=simhei_font)
+    ax.set_title('ROC曲线', fontproperties=simhei_font)
     ax.legend(loc='lower right')
     st.pyplot(fig)
     
