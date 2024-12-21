@@ -6,7 +6,6 @@
 
 import numpy as np
 import pandas as pd
-import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
@@ -17,13 +16,8 @@ from joblib import dump, load
 from matplotlib import font_manager
 import os
 
-# 下载并设置 SimHei 字体
-simhei_font = font_manager.FontProperties(fname="simhei.ttf", size=12)
-plt.rcParams['font.family'] = simhei_font.get_name()
-plt.rcParams['axes.unicode_minus'] = False
-
 # 设置中文字体
-plt.rcParams['font.family'] = 'SimHei'
+plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['axes.unicode_minus'] = False
 
 # Streamlit 标题
