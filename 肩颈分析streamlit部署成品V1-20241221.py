@@ -103,8 +103,8 @@ if uploaded_file is not None:
         
         # 绘制图像
         fig, ax = plt.subplots(figsize=(10, 6))
-        ax.scatter(data['时间(s)'], data['颈部角度(°)'], label='颈部角度(°)', alpha=0.7, fontproperties=simhei_font)
-        ax.scatter(data['时间(s)'], data['肩部旋转角度(°)'], label='肩部旋转角度(°)', alpha=0.7, fontproperties=simhei_font)
+        ax.scatter(data['时间(s)'], data['颈部角度(°)'], label='颈部角度(°)', alpha=0.7)
+        ax.scatter(data['时间(s)'], data['肩部旋转角度(°)'], label='肩部旋转角度(°)', alpha=0.7)
         ax.set_xlabel('时间(s)', fontproperties=simhei_font)
         ax.set_ylabel('角度(°)', fontproperties=simhei_font)
         ax.legend()
