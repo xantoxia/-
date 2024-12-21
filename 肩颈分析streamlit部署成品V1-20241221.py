@@ -6,6 +6,8 @@
 
 import numpy as np
 import pandas as pd
+import requests
+from matplotlib import font_manager
 import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -17,11 +19,19 @@ from joblib import dump, load
 from matplotlib import font_manager
 import os
 
-# 设置中文字体
-font_path = 'simhei.ttf'  # 字体文件路径
+# 下载 SimHei 字体文件
+font_url = "https://github.com/adobe-fonts/source-han-sans/raw/release/SubsetOTF/CN/SourceHanSansCN-Regular.otf"
+font_path = "SourceHanSansCN-Regular.otf"
+
+if not os.path.exists(font_path):
+    response = requests.get(font_url)
+    with open(font_path, 'wb') as f:
+        f.write(response.content)
+
+# 加载字体
 simhei_font = font_manager.FontProperties(fname=font_path)
-plt.rcParams['font.family'] = simhei_font.get_name()  # 使用 SimHei 字体
-plt.rcParams['axes.unicode_minus'] = False  # 修复负号显示问题
+plt.rcParams['font.family'] = simhei_font.get_name()
+plt.rcParams['axes.unicode_minus'] = False
 
 # Streamlit 标题
 st.title("肩颈角度动态分析与异常检测")
