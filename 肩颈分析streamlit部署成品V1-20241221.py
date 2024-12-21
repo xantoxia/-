@@ -107,7 +107,7 @@ if uploaded_file is not None:
         ax.scatter(data['时间(s)'], data['肩部旋转角度(°)'], label='肩部旋转角度(°)', alpha=0.7)
         ax.set_xlabel('时间(s)', fontproperties=simhei_font)
         ax.set_ylabel('角度(°)', fontproperties=simhei_font)
-        ax.legend((), fontproperties=simhei_font)
+        ax.legend()
         ax.set_title('肩颈角度时间变化散点图', fontproperties=simhei_font)
     
         # 用 st.pyplot() 嵌入图像
