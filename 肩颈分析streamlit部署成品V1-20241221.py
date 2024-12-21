@@ -17,10 +17,9 @@ from joblib import dump, load
 from matplotlib import font_manager
 import os
 
-# 设置字体路径
-font_path = os.path.join(os.path.dirname(__file__), "simhei.ttf")
-matplotlib.rcParams['font.family'] = font_path
-matplotlib.rcParams['axes.unicode_minus'] = False
+# 设置中文字体
+plt.rcParams['font.family'] = 'Microsoft YaHei'  # 微软雅黑
+plt.rcParams['axes.unicode_minus'] = False  # 修复负号显示问题
 
 # Streamlit 标题
 st.title("肩颈角度动态分析与异常检测")
