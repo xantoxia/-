@@ -26,6 +26,15 @@ plt.rcParams['axes.unicode_minus'] = False  # 修复负号显示问题
 st.title("肩颈角度动态分析与异常检测")
 st.write("本人因AI工具结合人因规则与机器学习模型，自动检测异常作业姿势并提供可视化分析。")
 
+# 模板下载
+with open("肩颈角度数据模版.csv", "rb") as file:
+    st.download_button(
+        label="下载 CSV 模板",
+        data=file,
+        file_name="template.csv",
+        mime="text/csv"
+    )
+
 # 数据加载与预处理
 uploaded_file = st.file_uploader("上传肩颈角度数据文件 (CSV 格式)", type="csv")
 
