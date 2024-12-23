@@ -88,13 +88,13 @@ if uploaded_file is not None:
         corr = data[['颈部角度(°)', '肩部上举角度(°)', '肩部外展/内收角度(°)', '肩部旋转角度(°)']].corr()
 
         # 创建绘图
-        fig, ax = plt.subplots(figsize=(10, 8))
+        fig, ax = plt.subplots(figsize=(8, 6))
         sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f', cbar=True, ax=ax)
 
         # 设置标题和坐标轴字体
         ax.set_title('肩颈角度相关性热力图', fontproperties=simhei_font)
-        ax.set_xticklabels(ax.get_xticklabels(), fontproperties=simhei_font)
-        ax.set_yticklabels(ax.get_yticklabels(), fontproperties=simhei_font)
+        ax.set_xticklabels(ax.get_xticklabels(), fontproperties=simhei_font, fontsize=10)
+        ax.set_yticklabels(ax.get_yticklabels(), fontproperties=simhei_font, fontsize=10)
 
         # 渲染图表到 Streamlit
         st.pyplot(fig)
