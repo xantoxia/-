@@ -88,7 +88,7 @@ if uploaded_file is not None:
         corr = data[['颈部角度(°)', '肩部上举角度(°)', '肩部外展/内收角度(°)', '肩部旋转角度(°)']].corr()
 
         # 创建绘图
-        fig, ax = plt.subplots(figsize=(8, 6))
+        fig, ax = plt.subplots(figsize=(10, 8))
         sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f', cbar=True, ax=ax)
 
         # 设置标题和坐标轴字体
