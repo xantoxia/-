@@ -93,8 +93,8 @@ if uploaded_file is not None:
 
         # 设置标题和坐标轴字体
         ax.set_title('肩颈角度相关性热力图', fontproperties=simhei_font)
-        ax.set_xticklabels(ax.get_xticklabels(), fontproperties=simhei_font, fontsize=10)
-        ax.set_yticklabels(ax.get_yticklabels(), fontproperties=simhei_font, fontsize=10)
+        ax.set_xticklabels(ax.get_xticklabels(), fontproperties=simhei_font, fontsize=8)
+        ax.set_yticklabels(ax.get_yticklabels(), fontproperties=simhei_font, fontsize=8)
 
         # 渲染图表到 Streamlit
         st.pyplot(fig)
