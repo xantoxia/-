@@ -199,8 +199,8 @@ if uploaded_file is not None:
     # 机器学习
     model_file = "/tmp/model.joblib"
 
-    if os.path.exists(model_file):
-        model = load(model_file)
+    if os.path.exists("/tmp/model.joblib"):
+        model = load("/tmp/model.joblib")
         st.write("加载已有模型。")
     else:
         st.write("模型文件不存在，需重新训练！")
