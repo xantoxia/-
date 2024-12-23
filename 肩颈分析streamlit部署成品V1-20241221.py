@@ -197,13 +197,13 @@ if uploaded_file is not None:
         return abnormal_indices
   
     # 机器学习
-    model_file = '肩颈分析-机器学习版模型.joblib'
+    model_file = "/tmp/model.joblib"
 
     if os.path.exists(model_file):
         model = load(model_file)
         st.write("加载已有模型。")
     else:
-        model = RandomForestClassifier(random_state=42)
+        st.write("模型文件不存在，需重新训练！")
 
     X = data[['颈部角度(°)', '肩部上举角度(°)', '肩部外展/内收角度(°)', '肩部旋转角度(°)']]
     if 'Label' not in data.columns:
