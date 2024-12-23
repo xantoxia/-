@@ -119,9 +119,9 @@ if uploaded_file is not None:
         fig, ax = plt.subplots(figsize=(10, 6))
         ax.scatter(data['时间(s)'], data['颈部角度(°)'], label='颈部角度(°)', alpha=0.7)
         ax.scatter(data['时间(s)'], data['肩部旋转角度(°)'], label='肩部旋转角度(°)', alpha=0.7)
-        ax.set_xlabel('时间(s)', fontproperties=simhei_font, fontsize=10)
-        ax.set_ylabel('角度(°)', fontproperties=simhei_font, fontsize=10)
-        ax.set_title('肩颈角度时间变化散点图', fontproperties=simhei_font, fontsize=10)
+        ax.set_xlabel('时间(s)', fontproperties=simhei_font, fontsize=12)
+        ax.set_ylabel('角度(°)', fontproperties=simhei_font, fontsize=12)
+        ax.set_title('肩颈角度时间变化散点图', fontproperties=simhei_font, fontsize=12)
 
         # 设置图例字体
         legend = ax.legend(prop=simhei_font)  # 图例字体设置为 simhei
