@@ -82,13 +82,23 @@ if uploaded_file is not None:
 
     # 相关性热力图
     def generate_correlation_heatmap(data):
-        st.write("### 2.2  肩颈角度相关性热力图")
+        st.write("### 2.2 肩颈角度相关性热力图")
+
+        # 计算相关性矩阵
         corr = data[['颈部角度(°)', '肩部上举角度(°)', '肩部外展/内收角度(°)', '肩部旋转角度(°)']].corr()
-        plt.figure(figsize=(8, 6))
-        sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f', cbar=True)
-        plt.title('肩颈角度相关性热力图', fontproperties=simhei_font)
-        st.pyplot(plt)
-        
+
+        # 创建绘图
+        fig, ax = plt.subplots(figsize=(8, 6))
+        sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f', cbar=True, ax=ax)
+
+        # 设置标题和坐标轴字体
+        ax.set_title('肩颈角度相关性热力图', fontproperties=simhei_font)
+        ax.set_xticklabels(ax.get_xticklabels(), fontproperties=simhei_font)
+        ax.set_yticklabels(ax.get_yticklabels(), fontproperties=simhei_font)
+
+        # 渲染图表到 Streamlit
+        st.pyplot(fig)
+
         # 相关性热力图分析结论
         st.write("\n**动态分析结论：相关性热力图**")
         if corr['颈部角度(°)']['肩部上举角度(°)'] > 0.5:
